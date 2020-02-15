@@ -9,8 +9,8 @@ class App extends Component {
     this.changeInterval = this.changeInterval.bind(this);
     this.state = {
       timerOn: 0,
-      totalTime: 5, //total time to count no of clicks
-      timeInt: 0.5, //time interval to count no of clicks
+      totalTime: 10, //total time to count no of clicks
+      timeInt: 1, //time interval to count no of clicks
       minus: 0,
       plus: 0,
       orange: 0,
@@ -56,7 +56,7 @@ class App extends Component {
         this.state.plusCnts
       );
 
-      this.setState({ message: "Time up!" });
+      this.setState({ message: "Time is up!" });
       this.setState({ disabled: true });
       //this.resetButtons();
     }
@@ -76,29 +76,29 @@ class App extends Component {
 
   clickMinus = () => {
     if (!this.state.disabled) {
+      if (this.state.index === 1) {
+        this.setState({ message: "Start!" });
+      }
+
       this.startTimer();
       this.setState({
         minus: this.state.minus + 1,
         orange: this.state.orange + 1
       });
-    }else{
-      if (this.state.index === 1){
-        this.startTimer.message = "Start to count Clicks!...";
-      }
     }
   };
 
   clickPlus = () => {
     if (!this.state.disabled) {
+      if (this.state.index === 1) {
+        this.setState({ message: "Start!" });
+      }
+
       this.startTimer();
       this.setState({
         plus: this.state.plus + 1,
         blue: this.state.blue + 1
       });
-    }else{
-      if (this.state.index === 1){
-        this.startTimer.message = "Start to count Clicks!...";
-      }
     }
   };
 
@@ -204,7 +204,9 @@ class App extends Component {
               </td>
             </tr>
             <tr>
-              <td colSpan="2"><h3>{this.state.message}</h3></td>
+              <td colSpan="2">
+                <h3>{this.state.message}</h3>
+              </td>
             </tr>
             <tr>
               <td>No of click(s): {this.state.orange}</td>
