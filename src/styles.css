@@ -1,0 +1,45 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+.button {
+  border: none;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: white;
+  padding: 20px;
+  font-size: 30px;
+  margin: 4px 2px;
+  height: 100px;
+  width: 100px;
+  box-shadow: 0 9px #999;
+}
+.resetButton {
+  padding: 15px 25px;
+  font-size: 20px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: Red;
+  background-color: lightgray;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+.resetButton:acive {
+  transform: translateY(4px);
+}
+.orange {
+  background-color: #ff9559;
+}
+.blue {
+  background-color: #007aff;
+}
+.round {
+  border-radius: 50%;
+}
+.button:active {
+  box-shadow: 0 9px #999;
+  transform: translateY(4px);
+}

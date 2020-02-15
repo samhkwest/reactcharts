@@ -1,2 +1,0 @@
-# reactcharts
-Created with CodeSandbox
